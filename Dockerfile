@@ -1,5 +1,7 @@
 FROM balenalib/amd64-debian:stretch
 
+ENV INITSYSTEM on
+
 # Install Systemd
 RUN apt-get update && apt-get install -y --no-install-recommends \
         systemd \
