@@ -6,6 +6,7 @@ ENV INITSYSTEM on
 RUN apt-get update && apt-get install -y --no-install-recommends \
         systemd \
         systemd-sysv \
+        supervisor \
         redis-server \
     && rm -rf /var/lib/apt/lists/*
 
@@ -30,8 +31,7 @@ COPY resin.service /etc/systemd/system/resin.service
 
 RUN systemctl enable resin.service
 RUN systemctl enable redis-server
-#RUN service redis-server start
-RUN systemctl enable redis-server
+RUN systemctl enable supervisor
 
 STOPSIGNAL 37
 ENTRYPOINT ["/usr/bin/entry.sh"]
