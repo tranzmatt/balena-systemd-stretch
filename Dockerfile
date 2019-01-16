@@ -28,8 +28,8 @@ COPY resin.service /etc/systemd/system/resin.service
 
 RUN systemctl enable resin.service
 RUN systemctl enable redis-server
-RUN service redis-server start
-#RUN systemctl enable redis-server
+#RUN service redis-server start
+RUN systemctl enable redis-server
 
 STOPSIGNAL 37
 ENTRYPOINT ["/usr/bin/entry.sh"]
