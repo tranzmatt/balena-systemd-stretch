@@ -1,4 +1,4 @@
-FROM balenalib/raspberrypi3-debian:stretch
+FROM balenalib/ts4900-debian:stretch
 
 ENV INITSYSTEM on
 
