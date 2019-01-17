@@ -1,4 +1,4 @@
-FROM balenalib/amd64-debian:stretch
+FROM balenalib/raspberrypi3-debian:stretch
 
 ENV INITSYSTEM on
 
@@ -35,5 +35,6 @@ RUN systemctl enable supervisor
 
 STOPSIGNAL 37
 ENTRYPOINT ["/usr/bin/entry.sh"]
+CMD ["/bin/bash"]
 
 
