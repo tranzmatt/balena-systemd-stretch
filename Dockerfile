@@ -47,7 +47,7 @@ RUN systemctl enable supervisor
 RUN systemctl enable dropbear.service
 
 STOPSIGNAL 37
-VOLUME ["/sys/fs/cgroup"]
+#VOLUME ["/sys/fs/cgroup"]
 ENTRYPOINT ["/usr/bin/entry.sh"]
 CMD ["/bin/bash"]
 
