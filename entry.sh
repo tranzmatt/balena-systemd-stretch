@@ -17,12 +17,12 @@ function init_systemd()
 	done > /etc/docker.env
 	echo 'source /etc/docker.env' >> ~/.bashrc
 
-	printf '#!/bin/bash\n exec ' > /etc/resinApp.sh
-	printf '%q ' "$@" >> /etc/resinApp.sh
-	chmod +x /etc/resinApp.sh
+	printf '#!/bin/bash\n exec ' > /etc/balenaApp.sh
+	printf '%q ' "$@" >> /etc/balenaApp.sh
+	chmod +x /etc/balenaApp.sh
 
-	mkdir -p /etc/systemd/system/resin.service.d
-	cat <<-EOF > /etc/systemd/system/resin.service.d/override.conf
+	mkdir -p /etc/systemd/system/balena.service.d
+	cat <<-EOF > /etc/systemd/system/balena.service.d/override.conf
 		[Service]
 		WorkingDirectory=$(pwd)
 	EOF

@@ -3,7 +3,7 @@ Description=Resin.io User Application
 
 [Service]
 EnvironmentFile=/etc/docker.env
-ExecStart=/etc/resinApp.sh
+ExecStart=/etc/balenaApp.sh
 StandardOutput=tty
 StandardError=tty
 TTYPath=/dev/console

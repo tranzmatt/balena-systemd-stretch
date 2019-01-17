@@ -27,9 +27,9 @@ RUN systemctl mask \
     kmod-static-nodes.service
 
 COPY entry.sh /usr/bin/entry.sh
-COPY resin.service /etc/systemd/system/resin.service
+COPY balena.service /etc/systemd/system/balena.service
 
-RUN systemctl enable resin.service
+RUN systemctl enable balena.service
 RUN systemctl enable redis-server
 RUN systemctl enable supervisor
 
